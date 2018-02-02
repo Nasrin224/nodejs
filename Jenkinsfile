@@ -12,7 +12,8 @@ node {
      }
    }
    stage('docker build/push') {
-     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
+      //https://index.docker.io/v1/
+     docker.withRegistry('https://hub.docker.com', 'dockerhub') {
        def app = docker.build("manee2k6/docker-nodejs:app-${commit_id}", '.').push()
      }
    }
