@@ -18,7 +18,7 @@ node {
       
    }
    stage('Docker build/push') {
-       docker.withRegistry('https://index.docker.io/v1/', '	dockerid') {
+       docker.withRegistry('https://index.docker.io/v1/', 'dockerid') {
        def app = docker.build("nasrin224/docker-nodejs:app-${commit_id}", '.').push()
      }
    }
